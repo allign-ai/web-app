@@ -16,13 +16,9 @@ export default function RootLayout() {
       routerReplace={(to) => navigate(to, {replace: true})}
       publishableKey={PUBLISHABLE_KEY}
     >
-      <html className="h-full bg-white">
-      <body className="h-full">
       <main>
         <Outlet/>
       </main>
-      </body>
-      </html>
     </ClerkProvider>
-  )
+)
 }

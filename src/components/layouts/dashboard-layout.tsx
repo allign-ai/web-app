@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 import {
   Dialog,
@@ -47,19 +45,17 @@ export default function DashboardLayout() {
   const { userId, isLoaded } = useAuth()
   const navigate = useNavigate()
 
-  console.log('test', userId)
-
   React.useEffect(() => {
     if (isLoaded && !userId) {
       navigate('/sign-in')
     }
-  }, [isLoaded])
+  }, [isLoaded, navigate, userId])
 
   if (!isLoaded) return 'Loading...'
 
   return (
     <>
-      <div>
+      <div className="min-h-full bg-white">
         <Dialog open={sidebarOpen} onClose={setSidebarOpen} className="relative z-50 lg:hidden">
           <DialogBackdrop
             transition

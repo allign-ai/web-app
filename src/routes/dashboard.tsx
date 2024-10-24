@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import ListMemories from "../components/memories/ListMemories.tsx";
 
 export default function DashboardPage() {
   return (
@@ -14,6 +15,8 @@ export default function DashboardPage() {
           <Link to="/">Return to index</Link>
         </li>
       </ul>
+
+      <ListMemories />
     </>
   )
 }

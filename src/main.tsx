@@ -15,6 +15,10 @@ import SignUpPage from './features/auth/sign-up.tsx'
 import DashboardPage from './routes/dashboard'
 import InvoicesPage from './routes/dashboard.invoices'
 import OrgChooser from "./routes/choose-org-2.tsx";
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
+
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
@@ -39,6 +43,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   </React.StrictMode>,
 )

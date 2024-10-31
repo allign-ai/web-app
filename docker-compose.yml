@@ -1,3 +1,4 @@
+name: allign-web-app
 services:
   web:
     build:

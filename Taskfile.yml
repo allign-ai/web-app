@@ -1,0 +1,18 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - docker compose build
+
+  start:
+    cmds:
+      - docker compose up -d
+
+  stop:
+    cmds:
+      - docker compose down
+
+  tail-log:
+    cmds:
+      - docker compose exec web tail -f /var/log/app.log

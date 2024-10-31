@@ -1,0 +1,15 @@
+services:
+  web:
+    build:
+      context: .
+    container_name: allign-web
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - allign-local
+
+networks:
+  allign-local:
+    external: true

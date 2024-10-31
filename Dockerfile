@@ -23,4 +23,4 @@ EXPOSE 5173
 VOLUME ["/usr/src/app/node_modules", "/usr/src/app"]
 
 # Use npm run dev command
-CMD ["npm", "run", "dev"]
+CMD npm run dev > /var/log/app.log 2>&1
